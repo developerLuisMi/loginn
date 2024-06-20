@@ -17,16 +17,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route
-            path="/login"
+            path="/Login"
             element={
               <Login onAuthenticationSuccess={handleAuthenticationSuccess} />
             }
           />
           {isLoggedIn ? (
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Login/Dashboard" element={<Dashboard />} />
           ) : (
             <Route
-              path="/dashboard"
+              path="/Login/Dashboard"
               element={
                 <Login onAuthenticationSuccess={handleAuthenticationSuccess} />
               }

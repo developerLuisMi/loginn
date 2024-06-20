@@ -20,7 +20,7 @@ function Login({ onAuthenticationSuccess }) {
       if (response.ok) {
         // Autenticación exitosa, redirige al Dashboard
         onAuthenticationSuccess();
-        navigate("/dashboard");
+        navigate("/Login/Dashboard");
       } else {
         // Autenticación fallida, muestra un mensaje de error
         console.error("Credenciales incorrectas");
@@ -31,37 +31,42 @@ function Login({ onAuthenticationSuccess }) {
   };
 
   return (
-    <div className="containeringresar">
-      <form>
-        <div>
-          <label>Usuario:</label>
-          <input
-            type="text"
-            placeholder="Usuario"
-            value={usuario}
-            onChange={(event) => setUsuario(event.target.value)}
-          />
-        </div>
-        <div>
-          <label>Contraseña:</label>
-          <input
-            type="password"
-            placeholder="Contraseña"
-            value={contraseña}
-            onChange={(event) => setContraseña(event.target.value)}
-          />
-        </div>
-        <div className="buttoningresar">
-          <button
-            className="buttoningresar1"
-            type="button"
-            onClick={handleLogin}
-          >
-            Ingresar
-          </button>
-        </div>
-      </form>
-    </div>
+    <>
+      <div>
+        <h1>BIENVENIDOS AL AUTENTICADOR</h1>
+      </div>
+      <div className="containeringresar">
+        <form>
+          <div>
+            <label>Usuario:</label>
+            <input
+              type="text"
+              placeholder="Usuario"
+              value={usuario}
+              onChange={(event) => setUsuario(event.target.value)}
+            />
+          </div>
+          <div>
+            <label>Contraseña:</label>
+            <input
+              type="password"
+              placeholder="Contraseña"
+              value={contraseña}
+              onChange={(event) => setContraseña(event.target.value)}
+            />
+          </div>
+          <div className="buttoningresar">
+            <button
+              className="buttoningresar1"
+              type="button"
+              onClick={handleLogin}
+            >
+              Ingresar
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
 
